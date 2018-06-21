@@ -17,14 +17,11 @@
 package com.google.cloud.tools.maven;
 
 import com.google.cloud.tools.appengine.api.AppEngineException;
-import com.google.cloud.tools.appengine.cloudsdk.CloudSdkNotFoundException;
 import org.apache.maven.plugins.annotations.Mojo;
 
 /** Login and set the Cloud SDK common configuration user. */
 @Mojo(name = "cloudSdkLogin")
 public class CloudSdkLoginMojo extends CloudSdkMojo {
-
-  protected CloudSdkLoginMojo() throws CloudSdkNotFoundException {}
 
   @Override
   public void execute() {

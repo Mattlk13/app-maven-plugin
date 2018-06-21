@@ -181,7 +181,7 @@ public class CloudSdkAppEngineFactory {
     return LocalRun.builder(cloudSdk).build();
   }
 
-  ProcessHandler newDefaultProcessHandler() {
+  private ProcessHandler newDefaultProcessHandler() {
     ProcessOutputLineListener lineListener = new DefaultProcessOutputLineListener(mojo.getLog());
     return LegacyProcessHandler.builder()
         .addStdOutLineListener(lineListener)
@@ -190,7 +190,7 @@ public class CloudSdkAppEngineFactory {
         .build();
   }
 
-  ProcessHandler newDevAppServerAsyncHandler(int timeout) {
+  private ProcessHandler newDevAppServerAsyncHandler(int timeout) {
     Path logDir =
         Paths.get(mojo.getMavenProject().getBuild().getDirectory()).resolve("dev-appserver-out");
     if (!Files.exists(logDir)) {
