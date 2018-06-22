@@ -25,7 +25,14 @@ public interface AppEngineDeployer {
 
   class Factory {
 
-    static AppEngineDeployer newDeployer(AbstractDeployMojo deployConfiguration) {
+    static AppEngineDeployer newDeployer(AbstractDeployMojo deployConfiguration)
+        throws MojoExecutionException {
+      if (deployConfiguration.getArtifact() == null
+          || !deployConfiguration.getArtifact().exists()) {
+        throw new MojoExecutionException(
+            "\nCould not determine appengine environment, did you package your application?"
+                + "\nRun 'mvn package appengine:deploy'");
+      }
       return deployConfiguration.isStandardStaging()
           ? new AppEngineStandardDeployer(deployConfiguration)
           : new AppEngineFlexibleDeployer(deployConfiguration);
