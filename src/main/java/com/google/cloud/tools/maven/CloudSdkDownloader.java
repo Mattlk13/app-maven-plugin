@@ -48,8 +48,7 @@ public class CloudSdkDownloader {
    * @return The cloud SDK installation directory
    */
   public Path downloadIfNecessary(String version, Log log) {
-    ManagedCloudSdk managedCloudSdk =
-        managedCloudSdkFactory.apply(Strings.isNullOrEmpty(version) ? null : version);
+    ManagedCloudSdk managedCloudSdk = managedCloudSdkFactory.apply(version);
     try {
       ProgressListener progressListener = new NoOpProgressListener();
       ConsoleListener consoleListener = new CloudSdkDownloaderConsoleListener(log);

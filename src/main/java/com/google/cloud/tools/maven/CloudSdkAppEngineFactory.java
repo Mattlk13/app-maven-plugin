@@ -128,14 +128,14 @@ public class CloudSdkAppEngineFactory {
     return getGcloud().newGenRepoInfo(newDefaultProcessHandler());
   }
 
-  private CloudSdk getCloudSdk() {
-    return getCloudSdk(
+  private CloudSdk buildCloudSdk() {
+    return buildCloudSdk(
         mojo,
         new CloudSdkChecker(),
         new CloudSdkDownloader(CloudSdkDownloader.newManagedSdkFactory()));
   }
 
-  static CloudSdk getCloudSdk(
+  static CloudSdk buildCloudSdk(
       CloudSdkMojo mojo, CloudSdkChecker cloudSdkChecker, CloudSdkDownloader cloudSdkDownloader) {
 
     try {
@@ -163,18 +163,18 @@ public class CloudSdkAppEngineFactory {
   }
 
   Gcloud getGcloud() {
-    return Gcloud.builder(getCloudSdk())
+    return Gcloud.builder(buildCloudSdk())
         .setMetricsEnvironment(mojo.getArtifactId(), mojo.getArtifactVersion())
         .setCredentialFile(mojo.getServiceAccountKeyFile())
         .build();
   }
 
   private AppCfg getAppCfg() {
-    return AppCfg.builder(getCloudSdk()).build();
+    return AppCfg.builder(buildCloudSdk()).build();
   }
 
   private LocalRun getLocalRun() {
-    return LocalRun.builder(getCloudSdk()).build();
+    return LocalRun.builder(buildCloudSdk()).build();
   }
 
   private ProcessHandler newDefaultProcessHandler() {

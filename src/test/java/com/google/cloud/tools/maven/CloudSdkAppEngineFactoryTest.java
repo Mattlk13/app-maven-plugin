@@ -116,7 +116,7 @@ public class CloudSdkAppEngineFactoryTest {
 
     // invoke
     CloudSdk sdk =
-        CloudSdkAppEngineFactory.getCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
+        CloudSdkAppEngineFactory.buildCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
 
     // verify
     Assert.assertEquals(INSTALL_SDK_PATH, sdk.getPath());
@@ -131,7 +131,7 @@ public class CloudSdkAppEngineFactoryTest {
 
     // invoke
     CloudSdk sdk =
-        CloudSdkAppEngineFactory.getCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
+        CloudSdkAppEngineFactory.buildCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
 
     // verify
     Assert.assertEquals(INSTALL_SDK_PATH, sdk.getPath());
@@ -148,7 +148,7 @@ public class CloudSdkAppEngineFactoryTest {
 
     // invoke
     CloudSdk sdk =
-        CloudSdkAppEngineFactory.getCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
+        CloudSdkAppEngineFactory.buildCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
 
     // verify
     Assert.assertEquals(CLOUD_SDK_HOME, sdk.getPath());
@@ -163,7 +163,7 @@ public class CloudSdkAppEngineFactoryTest {
 
     // invoke
     CloudSdk sdk =
-        CloudSdkAppEngineFactory.getCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
+        CloudSdkAppEngineFactory.buildCloudSdk(mojoMock, cloudSdkChecker, cloudSdkDownloader);
 
     // verify
     Assert.assertEquals(CLOUD_SDK_HOME, sdk.getPath());
