@@ -24,7 +24,6 @@ public interface AppEngineDeployer {
   String GCLOUD_CONFIG = "GCLOUD_CONFIG";
 
   class Factory {
-
     static AppEngineDeployer newDeployer(AbstractDeployMojo deployConfiguration)
         throws MojoExecutionException {
       if (deployConfiguration.getArtifact() == null

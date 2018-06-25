@@ -69,7 +69,7 @@ public class AppEngineDeployerTest {
   @Test
   public void testNewDeployer_noArtifact() {
     try {
-      AppEngineDeployer deployer = AppEngineDeployer.Factory.newDeployer(deployMojo);
+      AppEngineDeployer.Factory.newDeployer(deployMojo);
       Assert.fail();
     } catch (MojoExecutionException ex) {
       Assert.assertEquals(
