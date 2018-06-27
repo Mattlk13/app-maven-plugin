@@ -372,9 +372,9 @@ You can add something like the following to your pom.xml:
   ...
   <executions>
     <execution>
-      <phase>package</phase>
+      <phase>deploy</phase>
       <goals>
-        <goal>stage</goal>
+        <goal>deploy</goal>
       </goals>
     </execution>
   </executions>
@@ -382,7 +382,7 @@ You can add something like the following to your pom.xml:
 </plugin>
 ```
 
-In this case, running `mvn package` will automatically run the `appengine:stage` goal afterwards.
+In this case, running `mvn deploy` will automatically build and deploy the application to appengine.
 
 ### I have a project that supports both flex and standard. How do I control which deployment to use?
 
