@@ -245,14 +245,13 @@ The `deploy` configuration has the following parameters:
 | `appEngineDirectory`  | Location of configuration files (cron.yaml, dos.yaml, etc) for configuration specific deployments. |
 | `bucket`              | The Google Cloud Storage bucket used to stage files associated with the deployment. |
 | `imageUrl`            | Deploy with a Docker URL from the Google container registry. |
-| `project`             | The Google Cloud Project target for this deployment. This can also be set to `GCLOUD_CONFIG` or `APPENGINE_CONFIG`.\* |
+| `project`             | The Google Cloud Project target for this deployment. This can also be set to `GCLOUD_CONFIG`.\* |
 | `promote`             | Promote the deployed version to receive all traffic. |
 | `server`              | The App Engine server to connect to. Typically, you do not need to change this value. |
 | `stopPreviousVersion` | Stop the previously running version of this service after deploying a new one that receives all traffic. |
-| `version`             | The version of the app that will be created or replaced by this deployment. This can also be set to `GCLOUD_CONFIG` or `APPENGINE_CONFIG`.\* |
+| `version`             | The version of the app that will be created or replaced by this deployment. This can also be set to `GCLOUD_CONFIG`.\* |
 
 \* setting a property to `GCLOUD_CONFIG` will deploy using the gcloud settings for the property.
-\* setting a property to `APPENGINE_CONFIG` will deploy using the value read from `appengine-web.xml`.
 
 ---
 
