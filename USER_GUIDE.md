@@ -42,7 +42,6 @@ For App Engine standard, the plugin exposes the following goals :
 | `run`             | Run the application locally. |
 | `start`           | Start the application in the background. |
 | `stop`            | Stop a running application. |
-| `genRepoInfoFile` | Generates repository information files for the Stackdriver Debugger. |
 
 #### Deployment
 
@@ -384,25 +383,6 @@ You can add something like the following to your pom.xml:
 ```
 
 In this case, running `mvn package` will automatically run the `appengine:stage` goal afterwards.
-
-### How can I automatically run the `appengine:genRepoInfoFile` goal during the Maven build workflow?
- 
-You can add the following to your plugin executions section:
-
-```XML
-<plugin>
-  ...
-  <executions>
-    <execution>
-      <phase>prepare-package</phase>
-      <goals>
-        <goal>genRepoInfoFile</goal>
-      </goals>
-    </execution>
-  </executions>
-  ...
-</plugin>
-```
 
 ### I have a project that supports both flex and standard. How do I control which deployment to use?
 
