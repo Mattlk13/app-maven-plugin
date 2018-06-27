@@ -1,9 +1,6 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## Unreleased
-### Added
-
 ## 2.0.0 (in release candidate)
 ### Added
 * New `cloudSdkVersion` parameter to specify desired Cloud SDK version.
